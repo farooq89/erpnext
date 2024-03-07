@@ -10,6 +10,8 @@
 # dbRds: false
 
 image:
+  #  repository: usman89/myrepo
+  #  tag: frapee_atd_0.0.3
   repository: frappe/erpnext
   tag: v15.14.3
   pullPolicy: IfNotPresent
