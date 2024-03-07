@@ -91,10 +91,10 @@ diagnosticMode:
 ## @param image.pullPolicy PostgreSQL image pull policy
 ## @param image.pullSecrets Specify image pull secrets
 ## @param image.debug Specify if debug values should be set
-##
+##docker pull postgres:14.11
 image:
   registry: docker.io
-  repository: postgresql
+  repository: postgres
   tag: 14.11
   digest: ""
   ## Specify a imagePullPolicy
