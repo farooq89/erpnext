@@ -47,7 +47,7 @@ spec:
         #   mountPath: /home/frappe/frappe-bench/sites
       containers:
       - name: create-site
-        image: usman89/myrepo:customapp0.0.1
+        image: usman89/myrepo:frapee_atd_0.0.3
         imagePullPolicy: IfNotPresent
         command: ["bash", "-c"]
         args:
