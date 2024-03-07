@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: erpnext-app-set
+spec:
+  generators:
+  - list:
+      elements:
+      - cluster: dev
+        url: https://kubernetes.default.svc
+  template:
+    metadata:
+      name: 'dev-erpnext'
+    spec:
+      syncPolicy:
+        automated:
+          selfHeal: true
+      project: default
+      source:
+        repoURL: https://github.com/farooq89/erpnext.git
+        targetRevision: HEAD
+        path: ./
+      destination:
+        server: 'https://kubernetes.default.svc'
+        namespace: erpnext
