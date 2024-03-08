@@ -23,42 +23,19 @@ spec:
           command: ["bash", "-c"]
           args:
             - >
-              wait-for-it -t 120 db:3306;
-              wait-for-it -t 120 redis-cache:6379;
-              wait-for-it -t 120 redis-queue:6379;
               export start=`date +%s`;
               until [[ -n `grep -hs ^ sites/common_site_config.json | jq -r ".db_host // empty"` ]] && \
                 [[ -n `grep -hs ^ sites/common_site_config.json | jq -r ".redis_cache // empty"` ]] && \
                 [[ -n `grep -hs ^ sites/common_site_config.json | jq -r ".redis_queue // empty"` ]];
               do
                 echo "Waiting for sites/common_site_config.json to be created";
-                sleep 5
-                if (( `date +%s`-start > 120 )); then
+                sleep 5;
+                if (( `date +%s`-start > 600 )); then
                   echo "could not find sites/common_site_config.json with required keys";
                   exit 1
                 fi
               done;
               echo "sites/common_site_config.json found";
-              bench new-site --no-mariadb-socket --admin-password=admin --db-root-password=admin --set-default atd.mmis.space;
-              pwd;
-              bash -c '
-                cd apps
-                cd associated_terminals
-                pwd
-                if [ "git rev-parse HEAD" == "git ls-remote upstream HEAD" ]; then
-                  echo "Local and remote Git repositories are in sync."
-                else
-                  echo "Local and remote Git repositories are not in sync."
-                  git stash
-                  git pull
-                  yarn build
-                fi
-                bench --site atd.mmis.space install-app associated_terminals;
-                bench --site atd.mmis.space migrate;
-                bench config set-common-config -c enable_frappe_logger true;
-                bench set-config cors_allow_origin "*";
-                bench set-config ignore_csrf 1;
-                ';
           resources:
             {{- toYaml .Values.jobs.createSite.resources | nindent 12 }}
           securityContext:
@@ -73,10 +50,26 @@ spec:
         command: ["bash", "-c"]
         args:
           - >
-            bench new-site $(SITE_NAME)  --db-type=$(DB_TYPE) --db-host=$(DB_HOST) --db-port=$(DB_PORT) --admin-password=$(ADMIN_PASSWORD) --install-app=associated_terminals --db-root-username=$(DB_ROOT_USER) --db-root-password=$(DB_ROOT_PASSWORD)  --force ;rm -f currentsite.txt; bench use erp.info.com; bench --site erp.info.com enable-scheduler;
+            bench new-site $(SITE_NAME)
+            --no-mariadb-socket
+            --db-type=$(DB_TYPE)
+            --db-host=$(DB_HOST)
+            --db-port=$(DB_PORT)
+            --admin-password=$(ADMIN_PASSWORD)
+            --mariadb-root-username=$(DB_ROOT_USER)
+            --mariadb-root-password=$(DB_ROOT_PASSWORD)
+        {{- if .Values.jobs.createSite.installApps }}
+          {{- range .Values.jobs.createSite.installApps }}
+            --install-app={{ . }}
+          {{- end }}
+        {{- end }}
+          {{- if .Values.jobs.createSite.forceCreate }}
+            --force
+          {{- end }}
+            ;rm -f currentsite.txt
         env:
           - name: "SITE_NAME"
-            value: "erp.info.com"
+            value: "{{ .Values.jobs.createSite.siteName }}"
           - name: "DB_TYPE"
             value: {{ .Values.jobs.createSite.dbType }}
           - name: "DB_HOST"
