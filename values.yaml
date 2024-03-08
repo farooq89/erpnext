@@ -317,13 +317,13 @@ jobs:
     args: []
 
   createSite:
-    enabled: false
-    forceCreate: false
-    siteName: "erp.cluster.local"
+    enabled: true
+    forceCreate: true
+    siteName: "erp.info.com"
     adminPassword: "changeit"
     installApps:
-    - "erpnext"
-    dbType: "mariadb"
+    - "associated_terminals"
+    dbType: "postgres"
     backoffLimit: 0
     resources: {}
     nodeSelector: {}
