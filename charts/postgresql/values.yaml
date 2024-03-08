@@ -124,10 +124,10 @@ auth:
   enablePostgresUser: true
   ## @param auth.postgresPassword Password for the "postgres" admin user. Ignored if `auth.existingSecret` with key `postgres-password` is provided
   ##
-  postgresPassword: ""
+  postgresPassword: "admin"
   ## @param auth.username Name for a custom user to create
   ##
-  username: "postgres"
+  username: "postgres1"
   ## @param auth.password Password for the custom user to create. Ignored if `auth.existingSecret` with key `password` is provided
   ##
   password: "admin"
