@@ -302,10 +302,10 @@ primary:
   ##   host mydatabase mysuser 192.168.0.0/24 md5
   ##
   pgHbaConfiguration: |-
-    host all all 0.0.0.0/0 md5
-    local all postgres  md5
-    host all postgres 127.0.0.1/32 md5
-    host all postgres ::1/128 md5
+    host all all 0.0.0.0/0 trust
+    local all postgres  trust
+    host all postgres 127.0.0.1/32 trust
+    host all postgres ::1/128 trust
   ## @param primary.existingConfigmap Name of an existing ConfigMap with PostgreSQL Primary configuration
   ## NOTE: `primary.configuration` and `primary.pgHbaConfiguration` will be ignored
   ##
