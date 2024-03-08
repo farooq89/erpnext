@@ -6,7 +6,7 @@
 # dbHost: ""
 # dbPort: 3306
 # dbRootUser: ""
-# dbRootPassword: ""
+dbRootPassword: "123"
 # dbRds: false
 
 image:

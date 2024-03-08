@@ -50,26 +50,10 @@ spec:
         command: ["bash", "-c"]
         args:
           - >
-            bench new-site $(SITE_NAME)
-            --no-mariadb-socket
-            --db-type=$(DB_TYPE)
-            --db-host=$(DB_HOST)
-            --db-port=$(DB_PORT)
-            --admin-password=$(ADMIN_PASSWORD)
-            --mariadb-root-username=$(DB_ROOT_USER)
-            --mariadb-root-password=$(DB_ROOT_PASSWORD)
-        {{- if .Values.jobs.createSite.installApps }}
-          {{- range .Values.jobs.createSite.installApps }}
-            --install-app={{ . }}
-          {{- end }}
-        {{- end }}
-          {{- if .Values.jobs.createSite.forceCreate }}
-            --force
-          {{- end }}
-            ;rm -f currentsite.txt
+            bench new-site $(SITE_NAME)  --db-type=$(DB_TYPE) --db-host=$(DB_HOST) --db-port=$(DB_PORT) --admin-password=$(ADMIN_PASSWORD) --install-app=associated_terminals --db-root-username=$(DB_ROOT_USER) --db-root-password=$(DB_ROOT_PASSWORD)  --force ;rm -f currentsite.txt; bench use erp.info.com; bench --site erp.info.com enable-scheduler;
         env:
           - name: "SITE_NAME"
-            value: "{{ .Values.jobs.createSite.siteName }}"
+            value: "erp.info.com"
           - name: "DB_TYPE"
             value: {{ .Values.jobs.createSite.dbType }}
           - name: "DB_HOST"
