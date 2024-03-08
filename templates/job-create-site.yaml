@@ -16,33 +16,33 @@ spec:
       serviceAccountName: {{ template "erpnext.serviceAccountName" $ }}
       securityContext:
         {{- toYaml $.Values.podSecurityContext | nindent 8 }}
-      initContainers:
-        - name: validate-config
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
-          command: ["bash", "-c"]
-          args:
-            - >
-              export start=`date +%s`;
-              until [[ -n `grep -hs ^ sites/common_site_config.json | jq -r ".db_host // empty"` ]] && \
-                [[ -n `grep -hs ^ sites/common_site_config.json | jq -r ".redis_cache // empty"` ]] && \
-                [[ -n `grep -hs ^ sites/common_site_config.json | jq -r ".redis_queue // empty"` ]];
-              do
-                echo "Waiting for sites/common_site_config.json to be created";
-                sleep 5;
-                if (( `date +%s`-start > 600 )); then
-                  echo "could not find sites/common_site_config.json with required keys";
-                  exit 1
-                fi
-              done;
-              echo "sites/common_site_config.json found";
-          resources:
-            {{- toYaml .Values.jobs.createSite.resources | nindent 12 }}
-          securityContext:
-            {{- toYaml $.Values.securityContext | nindent 12 }}
-          volumeMounts:
-            - name: sites-dir
-              mountPath: /home/frappe/frappe-bench/sites
+      # initContainers:
+      #   - name: validate-config
+      #     image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+      #     imagePullPolicy: {{ .Values.image.pullPolicy }}
+      #     command: ["bash", "-c"]
+      #     args:
+      #       - >
+      #         export start=`date +%s`;
+      #         until [[ -n `grep -hs ^ sites/common_site_config.json | jq -r ".db_host // empty"` ]] && \
+      #           [[ -n `grep -hs ^ sites/common_site_config.json | jq -r ".redis_cache // empty"` ]] && \
+      #           [[ -n `grep -hs ^ sites/common_site_config.json | jq -r ".redis_queue // empty"` ]];
+      #         do
+      #           echo "Waiting for sites/common_site_config.json to be created";
+      #           sleep 5;
+      #           if (( `date +%s`-start > 600 )); then
+      #             echo "could not find sites/common_site_config.json with required keys";
+      #             exit 1
+      #           fi
+      #         done;
+      #         echo "sites/common_site_config.json found";
+      #     resources:
+      #       {{- toYaml .Values.jobs.createSite.resources | nindent 12 }}
+      #     securityContext:
+      #       {{- toYaml $.Values.securityContext | nindent 12 }}
+      #     volumeMounts:
+      #       - name: sites-dir
+      #         mountPath: /home/frappe/frappe-bench/sites
       containers:
       - name: create-site
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
