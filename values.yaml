@@ -317,7 +317,7 @@ jobs:
     args: []
 
   createSite:
-    enabled: false
+    enabled: true
     forceCreate: true
     siteName: "erp.info.com"
     adminPassword: "changeit"
