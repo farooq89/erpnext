@@ -441,7 +441,7 @@ redis-queue:
       enabled: false
 
 mariadb:
-  # https://github.com/bitnami/charts/tree/master/bitnami/mariadb
+  ## https://github.com/bitnami/charts/tree/master/bitnami/mariadb
   enabled: false
   auth:
     rootPassword: "changeit"
