@@ -5,8 +5,8 @@
 # Configure external database host
 # dbHost: ""
 # dbPort: 3306
-# dbRootUser: ""
-dbRootPassword: "123"
+dbRootUser: "postgres"
+dbRootPassword: "admin"
 # dbRds: false
 
 image:
@@ -320,7 +320,7 @@ jobs:
     enabled: true
     forceCreate: true
     siteName: "erp.info.com"
-    adminPassword: "changeit"
+    adminPassword: "admin"
     installApps:
     - "associated_terminals"
     dbType: "postgres"
