@@ -469,8 +469,8 @@ postgresql:
   enabled: true
   # host: ""
   auth:
-    username: "postgres"
-    postgresPassword: "admin"
+    username: ""
+    postgresPassword: ""
   primary:
     service:
       ports:
