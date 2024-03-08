@@ -13,7 +13,7 @@ spec:
   backoffLimit: 0
   template:
     spec:
-      serviceAccountName: frappe-bench-erpnext
+      serviceAccountName: dev-erpnext
       securityContext:
         supplementalGroups:
         - 1000
