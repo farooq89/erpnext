@@ -303,6 +303,9 @@ primary:
   ##
   pgHbaConfiguration: |-
     host all all 0.0.0.0/0 md5
+    local all postgres  md5
+    host all postgres 127.0.0.1/32 md5
+    host all postgres ::1/128 md5
   ## @param primary.existingConfigmap Name of an existing ConfigMap with PostgreSQL Primary configuration
   ## NOTE: `primary.configuration` and `primary.pgHbaConfiguration` will be ignored
   ##
