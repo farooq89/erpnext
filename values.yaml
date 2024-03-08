@@ -470,7 +470,7 @@ postgresql:
   # host: ""
   auth:
     username: "postgres"
-    postgresPassword: "changeit"
+    postgresPassword: "admin"
   primary:
     service:
       ports:
