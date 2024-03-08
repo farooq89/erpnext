@@ -52,17 +52,17 @@ spec:
         command: ["bash", "-c"]
         args:
         - >
-          bench new-site $(SITE_NAME) --no-mariadb-socket --db-type=$(DB_TYPE) --db-host=$(DB_HOST) --db-port=$(DB_PORT) --admin-password=$(ADMIN_PASSWORD) --install-app=associated_terminals --mariadb-root-username=$(DB_ROOT_USER) --mariadb-root-password=$(DB_ROOT_PASSWORD)  --force ;rm -f currentsite.txt; bench use erp.info.com; bench --site erp.info.com enable-scheduler;
+          bench new-site $(SITE_NAME)  --db-type=$(DB_TYPE) --db-host=$(DB_HOST) --db-port=$(DB_PORT) --admin-password=$(ADMIN_PASSWORD) --install-app=associated_terminals --db-root-username=$(DB_ROOT_USER) --db-root-password=$(DB_ROOT_PASSWORD)  --force ;rm -f currentsite.txt; bench use erp.info.com; bench --site erp.info.com enable-scheduler;
         env:
         - name: "SITE_NAME"
           value: "erp.info.com"
 
         - name: "DB_TYPE"
-          value: mariadb
+          value: postgres
         - name: "DB_HOST"
           value: frappe-bench-mariadb
         - name: "DB_PORT"
-          value: "3306"
+          value: "5432"
         - name: "DB_ROOT_USER"
           value: "root"
         - name: "DB_ROOT_PASSWORD"
