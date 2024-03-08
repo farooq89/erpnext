@@ -23,6 +23,7 @@ spec:
           command: ["bash", "-c"]
           args:
             - >
+            - set -x;
               export start=`date +%s`;
               until [[ -n `grep -hs ^ sites/common_site_config.json | jq -r ".db_host // empty"` ]] && \
                 [[ -n `grep -hs ^ sites/common_site_config.json | jq -r ".redis_cache // empty"` ]] && \
