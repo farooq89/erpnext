@@ -98,7 +98,7 @@ spec:
             {{- if .Values.dbRootUser }}
             value: "{{ .Values.dbRootUser }}"
             {{- else if .Values.postgresql.enabled }}
-            value: "root"
+            value: "postgres"
             {{- else if .Values.mariadb.enabled }}
             value: "root"
             {{- end }}
