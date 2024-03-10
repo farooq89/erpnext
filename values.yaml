@@ -5,8 +5,8 @@
 # Configure external database host
 # dbHost: ""
 # dbPort: 3306
-dbRootUser: "postgres"
-dbRootPassword: "admin"
+dbRootUser: "root"
+dbRootPassword: "postgres"
 # dbRds: false
 
 image:
