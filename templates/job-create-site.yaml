@@ -51,7 +51,7 @@ spec:
         command: ["bash", "-c"]
         args:
           - >
-            bench new-site $(SITE_NAME) --db-type postgres
+            bench new-site $(SITE_NAME)
             --db-type=$(DB_TYPE)
             --db-host=$(DB_HOST)
             --db-port=$(DB_PORT)
