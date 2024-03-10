@@ -442,7 +442,7 @@ redis-queue:
 
 mariadb:
   ## https://github.com/bitnami/charts/tree/master/bitnami/mariadb
-  enabled: true
+  enabled: false
   auth:
     rootPassword: "changeit"
     username: "erpnext"
@@ -466,11 +466,11 @@ mariadb:
 
 postgresql:
   # https://github.com/bitnami/charts/tree/master/bitnami/postgresql
-  enabled: false
+  enabled: true
   # host: ""
   auth:
-    username: ""
-    postgresPassword: ""
+    username: "postgres"
+    postgresPassword: "postgres"
   primary:
     service:
       ports:
