@@ -127,13 +127,13 @@ auth:
   postgresPassword: ""
   ## @param auth.username Name for a custom user to create
   ##
-  username: ""
+  username: "postgres"
   ## @param auth.password Password for the custom user to create. Ignored if `auth.existingSecret` with key `password` is provided
   ##
-  password: ""
+  password: "postgres"
   ## @param auth.database Name for a custom database to create
   ##
-  database: ""
+  database: "postgres123"
   ## @param auth.replicationUsername Name of the replication user
   ##
   replicationUsername: repl_user
