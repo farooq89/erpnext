@@ -37,6 +37,8 @@ spec:
                 fi
               done;
               echo "sites/common_site_config.json found";
+              ls;
+              pwd;
           resources:
             {{- toYaml .Values.jobs.createSite.resources | nindent 12 }}
           securityContext:
@@ -66,7 +68,7 @@ spec:
           {{- if .Values.jobs.createSite.forceCreate }}
             --force
           {{- end }}
-            ;rm -f currentsite.txt && pwd
+            ;rm -f currentsite.txt
         env:
           - name: "SITE_NAME"
             value: "{{ .Values.jobs.createSite.siteName }}"
