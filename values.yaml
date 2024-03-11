@@ -290,6 +290,7 @@ persistence:
 ingress:
   # ingressName: ""
   # className: ""
+  name:  ATD
   enabled: true
   annotations:
     kubernetes.io/ingress.class: nginx
