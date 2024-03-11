@@ -268,7 +268,7 @@ persistence:
     size: 8Gi
     # storageClass: "nfs"
 
-# # Ingress
+# Ingress
 # ingress:
 #   # ingressName: ""
 #   # className: ""
@@ -288,25 +288,26 @@ persistence:
 #   #      - auth-server.local
 
 ingress:
-  name: erp-resource
-  namespace: erpnext
-  annotations: 
+  # ingressName: ""
+  # className: ""
+  enabled: true
+  annotations:
     kubernetes.io/ingress.class: nginx
-    enabled: "true"
-    #haproxy.org/path-rewrite: "/"
-    #nginx.ingress.kubernetes.io/ssl-redirect: "false"
-    spec:
-      rules:
-      - host: "erp.info.com"
-        http:
-          paths:
-          - pathType: Prefix
-            path: "/"
-            backend:
-              service:
-                name: dev-erpnext
-                port:
-                  number: 8080
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+    # cert-manager.io/cluster-issuer: letsencrypt-prod
+  spec:
+    rules:
+    - host: "erp.info.com"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: dev-erpnext
+              port:
+                number: 8080
 
 
 jobs:
