@@ -51,7 +51,6 @@ spec:
         command: ["bash", "-c"]
         args:
           - >
-            ls -la
             bench new-site $(SITE_NAME)
             --db-type=$(DB_TYPE)
             --db-host=$(DB_HOST)
