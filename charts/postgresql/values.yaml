@@ -121,16 +121,16 @@ image:
 auth:
   ## @param auth.enablePostgresUser Assign a password to the "postgres" admin user. Otherwise, remote access will be blocked for this user
   ##
-  enablePostgresUser: true
+  enablePostgresUser: false
   ## @param auth.postgresPassword Password for the "postgres" admin user. Ignored if `auth.existingSecret` with key `postgres-password` is provided
   ##
-  postgresPassword: "postgres123"
+  postgresPassword: "postgres"
   ## @param auth.username Name for a custom user to create
   ##
   username: ""
   ## @param auth.password Password for the custom user to create. Ignored if `auth.existingSecret` with key `password` is provided
   ##
-  password: ""
+  password: "postgres"
   ## @param auth.database Name for a custom database to create
   ##
   database: "postgres123"

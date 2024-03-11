@@ -492,8 +492,8 @@ postgresql:
   enabled: true
   # host: ""
   auth:
-    username: ""
-    postgresPassword: ""
+    username: "postgres"
+    postgresPassword: "postgres"
   primary:
     service:
       ports:
