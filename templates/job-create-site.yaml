@@ -66,7 +66,7 @@ spec:
           {{- if .Values.jobs.createSite.forceCreate }}
             --force
           {{- end }}
-            ;rm -f currentsite.txt
+            ;rm -f currentsite.txt && pwd
         env:
           - name: "SITE_NAME"
             value: "{{ .Values.jobs.createSite.siteName }}"
