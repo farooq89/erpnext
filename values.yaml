@@ -14,7 +14,7 @@ image:
   tag: frapee_atd_0.0.1
   # repository: frappe/erpnext
   # tag: v15.14.3
-  pullPolicy: always
+  pullPolicy: Always
 
 nginx:
   replicaCount: 1
