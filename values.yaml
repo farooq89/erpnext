@@ -278,7 +278,7 @@ ingress:
     # kubernetes.io/tls-acme: "true"
     # cert-manager.io/cluster-issuer: letsencrypt-prod
   hosts:
-  - host: erp.info.local
+  - host: erp.info.com
     paths:
     - path: /
       pathType: ImplementationSpecific
