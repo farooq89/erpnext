@@ -269,46 +269,45 @@ persistence:
     # storageClass: "nfs"
 
 # Ingress
-# ingress:
-#   # ingressName: ""
-#   # className: ""
-#   enabled: false
-#   annotations: {}
-#     # kubernetes.io/ingress.class: nginx
-#     # kubernetes.io/tls-acme: "true"
-#     # cert-manager.io/cluster-issuer: letsencrypt-prod
-#   hosts:
-#   - host: erp.cluster.local
-#     paths:
-#     - path: /
-#       pathType: ImplementationSpecific
-#   tls: []
-#   #  - secretName: auth-server-tls
-#   #    hosts:
-#   #      - auth-server.local
-
 ingress:
   # ingressName: ""
   # className: ""
-  name:  ATD
   enabled: true
-  annotations:
-    kubernetes.io/ingress.class: nginx
+  annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
     # cert-manager.io/cluster-issuer: letsencrypt-prod
-  spec:
-    rules:
-    - host: "erp.info.com"
-      http:
-        paths:
-        - pathType: Prefix
-          path: "/"
-          backend:
-            service:
-              name: dev-erpnext
-              port:
-                number: 8080
+  hosts:
+  - host: erp.info.local
+    paths:
+    - path: /
+      pathType: ImplementationSpecific
+  tls: []
+  #  - secretName: auth-server-tls
+  #    hosts:
+  #      - auth-server.local
+
+# ingress:
+#   # ingressName: ""
+#   # className: ""
+#   enabled: true
+#   annotations:
+#     kubernetes.io/ingress.class: nginx
+#     # kubernetes.io/ingress.class: nginx
+#     # kubernetes.io/tls-acme: "true"
+#     # cert-manager.io/cluster-issuer: letsencrypt-prod
+#   spec:
+#     rules:
+#     - host: "erp.info.com"
+#       http:
+#         paths:
+#         - pathType: Prefix
+#           path: "/"
+#           backend:
+#             service:
+#               name: dev-erpnext
+#               port:
+#                 number: 8080
 
 
 jobs:
