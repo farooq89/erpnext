@@ -290,7 +290,6 @@ persistence:
 ingress:
   name: erp-resource
   namespace: erpnext
-  enabled: true
   annotations: 
     kubernetes.io/ingress.class: nginx
     #haproxy.org/path-rewrite: "/"
