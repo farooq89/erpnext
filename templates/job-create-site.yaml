@@ -51,7 +51,6 @@ spec:
         command: ["bash", "-c"]
         args:
           - >
-            ls -la
             bench new-site $(SITE_NAME)
             --db-type=$(DB_TYPE)
             --db-host=$(DB_HOST)
@@ -59,6 +58,7 @@ spec:
             --admin-password=$(ADMIN_PASSWORD)
             --mariadb-root-username=$(DB_ROOT_USER)
             --mariadb-root-password=$(DB_ROOT_PASSWORD)
+            ls -la;
         {{- if .Values.jobs.createSite.installApps }}
           {{- range .Values.jobs.createSite.installApps }}
             --install-app={{ . }}
