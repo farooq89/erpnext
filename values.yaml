@@ -30,7 +30,7 @@ nginx:
     upstreamRealIPAddress: "127.0.0.1"
     upstreamRealIPRecursive: "on"
     upstreamRealIPHeader: "X-Forwarded-For"
-    frappeSiteNameHeader: "erp.info.com"
+    frappeSiteNameHeader: "k8-atd.mmis.space"
   livenessProbe:
     tcpSocket:
       port: 8080
@@ -278,7 +278,7 @@ ingress:
     # kubernetes.io/tls-acme: "true"
     # cert-manager.io/cluster-issuer: letsencrypt-prod
   hosts:
-  - host: erp.info.com
+  - host: k8-atd.mmis.space
     paths:
     - path: /
       pathType: Prefix
@@ -298,7 +298,7 @@ ingress:
 #     # cert-manager.io/cluster-issuer: letsencrypt-prod
 #   spec:
 #     rules:
-#     - host: "erp.info.com"
+#     - host: "k8-atd.mmis.space"
 #       http:
 #         paths:
 #         - pathType: Prefix
@@ -342,7 +342,7 @@ jobs:
   createSite:
     enabled: true
     forceCreate: true
-    siteName: "erp.info.com"
+    siteName: "k8-atd.mmis.space"
     adminPassword: "admin"
     installApps:
     - "associated_terminals"
