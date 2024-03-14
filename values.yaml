@@ -343,7 +343,7 @@ jobs:
     enabled: true
     forceCreate: true
     siteName: "k8-atd.mmis.space"
-    adminPassword: "admin"
+    adminPassword: "mm@123"
     installApps:
     - "associated_terminals"
     dbType: "postgres"
