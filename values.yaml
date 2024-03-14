@@ -388,8 +388,8 @@ jobs:
     affinity: {}
 
   migrate:
-    enabled: false
-    siteName: "erp.cluster.local"
+    enabled: true
+    siteName: "k8-atd.mmis.space"
     skipFailing: false
     backoffLimit: 0
     resources: {}

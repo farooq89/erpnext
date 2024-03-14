@@ -23,9 +23,8 @@ spec:
         command: ["bash", "-c"]
         args:
           - >
-            bench --site $(SITE_NAME) set-maintenance-mode on;
-            bench --site $(SITE_NAME) migrate {{ if .Values.jobs.migrate.skipFailing }}--skip-failing{{ end }};
-            bench --site $(SITE_NAME) set-maintenance-mode off;
+            ls;
+            pwd;
         env:
           - name: "SITE_NAME"
             value: "{{ .Values.jobs.migrate.siteName }}"
