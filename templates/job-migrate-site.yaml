@@ -29,7 +29,7 @@ spec:
             git pull;
             yarn build;
             cd ../..;
-            bench migrate;
+            bench --site k8-atd.mmis.space migrate
         env:
           - name: "SITE_NAME"
             value: "{{ .Values.jobs.migrate.siteName }}"
