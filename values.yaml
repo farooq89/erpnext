@@ -418,21 +418,6 @@ jobs:
         value: "true"
         effect: "NoSchedule"
 
-  imagepull: 
-  enabled: true
-  spec:
-    template:
-      metadata:
-        labels:
-          app: git-pull-yarn-build
-      spec:
-        containers:
-        - name: git-pull-yarn-build
-          image: usman89/myrepo:frapee_atd_0.0.1
-          command: ["/bin/sh", "-c"]
-          args: ["cd /frappe-bench/to/your/directory && ls"]
-        restartPolicy: Never
-
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
