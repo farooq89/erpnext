@@ -29,6 +29,7 @@ spec:
             pwd;
             git stash;
             git pull;
+            yarn build;
         env:
           - name: "SITE_NAME"
             value: "{{ .Values.jobs.migrate.siteName }}"
