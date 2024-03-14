@@ -25,6 +25,8 @@ spec:
           - >
             cd apps;
             cd associated_terminals;
+            ls;
+            pwd;
         env:
           - name: "SITE_NAME"
             value: "{{ .Values.jobs.migrate.siteName }}"
