@@ -345,8 +345,8 @@ jobs:
     args: []
 
   createSite:
-    enabled: false
-    forceCreate: false
+    enabled: true
+    forceCreate: true
     siteName: "k8-atd.mmis.space"
     adminPassword: "mm@123"
     installApps:
@@ -405,6 +405,8 @@ jobs:
         value: "true"
         effect: "NoSchedule"
     affinity: {}
+    initialDelaySeconds: 40
+    periodSeconds: 60
 
   custom:
     enabled: false
