@@ -361,8 +361,8 @@ jobs:
         value: "true"
         effect: "NoSchedule"
     affinity: {}
-    initialDelaySeconds: 15
-    periodSeconds: 5
+    initialDelaySeconds: 30
+    periodSeconds: 15
 
   dropSite:
     enabled: false
