@@ -346,7 +346,7 @@ jobs:
 
   createSite:
     enabled: false
-    forceCreate: true
+    forceCreate: false
     siteName: "k8-atd.mmis.space"
     adminPassword: "mm@123"
     installApps:
