@@ -272,7 +272,7 @@ persistence:
 ingress:
   # ingressName: ""
   # className: ""
-  enabled: true
+  enabled: false
   annotations:
     kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
@@ -341,7 +341,7 @@ jobs:
 
   createSite:
     enabled: true
-    forceCreate: true
+    forceCreate: false
     siteName: "k8-atd.mmis.space"
     adminPassword: "mm@123"
     installApps:
