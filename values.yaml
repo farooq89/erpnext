@@ -345,7 +345,7 @@ jobs:
     args: []
 
   createSite:
-    enabled: true
+    enabled: false
     forceCreate: false
     siteName: "k8-atd.mmis.space"
     adminPassword: "mm@123"
