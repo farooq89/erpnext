@@ -25,6 +25,8 @@ spec:
           - >
             cd apps;
             cd associated_terminals;
+            ls -la;
+            pwd;
             git stash;
             git pull;
             yarn build;
