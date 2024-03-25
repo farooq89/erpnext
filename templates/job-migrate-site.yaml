@@ -34,6 +34,7 @@ spec:
             cp -R .git /home/frappe/frappe-bench/apps/associated_terminals/
             cd ..;
             pwd;
+            pwd;
             cd associated_terminals;
             pwd;
             git stash;
