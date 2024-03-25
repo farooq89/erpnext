@@ -271,7 +271,7 @@ persistence:
 #Ingress
 ingress:
   # ingressName: ""
-  className: "nginx"
+  # className: "nginx"
   enabled: true
   annotations:
     kubernetes.io/ingress.class: nginx
