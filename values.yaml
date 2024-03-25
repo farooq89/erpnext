@@ -280,7 +280,7 @@ ingress:
   hosts:
   - host: k8-atd.mmis.space
     paths:
-    - path: /
+    - path: "/"
       pathType: Prefix
     tls: []
     backend:
