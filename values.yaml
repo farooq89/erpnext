@@ -285,6 +285,8 @@ ingress:
     tls: []
   service:
     external:
+      enabled: true
+    externalTrafficPolicy: Local
     type: LoadBalancer
     loadBalancerIP: "4.150.168.121"
       # backend:
