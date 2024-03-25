@@ -42,7 +42,7 @@ spec:
             echo 7;
             pwd;
             echo 8;
-            cp -r .git /home/frappe/frappe-bench/apps/associated_terminals
+            cp -r .git /home/frappe/frappe-bench/apps/associated_terminals;
             echo 9;
             cd ..;
             echo 10;
