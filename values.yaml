@@ -283,11 +283,11 @@ ingress:
     - path: /
       pathType: Prefix
     tls: []
-  #   backend:
-  #     service:
-  #         name: dev-erpnext
-  #         port:
-  #           number: 8080
+    backend:
+      service:
+          name: dev-erpnext
+          port:
+            number: 8080
   # - secretName: auth-server-tls
   #   hosts:
   #     - auth-server.local
