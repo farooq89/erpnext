@@ -28,12 +28,13 @@ spec:
             ls -la;
             pwd;
             cd ..;
+            pwd;
             git clone https://x-token-auth:ATCTT3xFfGN01ZGPAktgG5e_SQ02ryC4NimdhgBHl57h0aQ0xsEdNyfyOytjlnCok-ErgKPeyRh24Kw31KtDNKVYxTMeaKNQj0sZL2ze8FGCJgNkbqCzXq_-lMU248UkkdGbOWo-4pVSSIYUDI1WnmpR5UYvO_GqwWys-8QmJcBGxm1M-6lKBnY=39B560F8@bitbucket.org/persona-lworkspace/associated-terminals.git;
             cd associated-terminals;
             ls -la;
-            cp -R .git /home/frappe/frappe-bench/apps/associated_terminals/
-            cd ..;
             pwd;
+            cp .git /home/frappe/frappe-bench/apps/associated_terminals
+            cd ..;
             pwd;
             cd associated_terminals;
             pwd;
