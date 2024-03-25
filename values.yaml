@@ -312,7 +312,7 @@ ingress:
             service:
               name: dev-erpnext
               port:
-                number: 80
+                number: 8080
 
 
 jobs:
