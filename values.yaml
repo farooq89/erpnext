@@ -284,6 +284,7 @@ ingress:
       pathType: Prefix
     tls: []
   service:
+    external:
     type: LoadBalancer
     loadBalancerIP: "4.150.168.121"
       # backend:
