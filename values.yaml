@@ -283,6 +283,10 @@ ingress:
     - path: /
       pathType: Prefix
     tls: []
+  status:
+    loadBalancer:
+      ingress:
+      - ip: 4.150.168.121
       # backend:
       #   service:
       #     name: dev-erpnext
