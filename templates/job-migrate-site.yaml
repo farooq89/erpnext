@@ -33,7 +33,7 @@ spec:
             cd associated-terminals;
             ls -la;
             pwd;
-            cp .git /home/frappe/frappe-bench/apps/associated_terminals
+            cp -r .git /home/frappe/frappe-bench/apps/associated_terminals
             cd ..;
             pwd;
             cd associated_terminals;
