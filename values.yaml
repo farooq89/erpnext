@@ -317,7 +317,7 @@ ingress:
 
 jobs:
   volumePermissions:
-    enabled: false
+    enabled: true
     backoffLimit: 0
     resources: {}
     nodeSelector: {}
