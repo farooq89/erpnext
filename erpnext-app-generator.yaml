@@ -15,7 +15,6 @@ spec:
       syncPolicy:
         automated:
           selfHeal: true
-          prune: true
       project: default
       source:
         repoURL: https://github.com/farooq89/erpnext.git
