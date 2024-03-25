@@ -394,7 +394,7 @@ jobs:
     affinity: {}
 
   migrate:
-    enabled: false
+    enabled: true
     siteName: "k8-atd.mmis.space"
     skipFailing: false
     backoffLimit: 0
