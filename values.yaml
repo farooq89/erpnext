@@ -304,11 +304,6 @@ spec:
         paths:
           - pathType: Prefix
             path: "/"
-            backend:
-              service:
-                name: sample-app-service
-                port:
-                  number: 80
 
 
 jobs:
