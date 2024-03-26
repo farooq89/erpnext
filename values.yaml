@@ -299,7 +299,7 @@ spec:
     - k8-atd.mmis.space
     secretName: ingress-cert
     rules:
-    - host: "www.ingress-tls.com"
+    - host: "k8-atd.mmis.space"
       http:
         paths:
           - pathType: Prefix
