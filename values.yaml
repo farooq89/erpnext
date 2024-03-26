@@ -298,12 +298,12 @@ spec:
   - hosts:
     - k8-atd.mmis.space
     secretName: ingress-cert
-    rules:
-    - host: "k8-atd.mmis.space"
-      http:
-        paths:
-          - pathType: Prefix
-            path: /
+  rules:
+  - host: "k8-atd.mmis.space"
+    http:
+      paths:
+        - pathType: Prefix
+          path: /
 
 
 jobs:
