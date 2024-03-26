@@ -304,8 +304,11 @@ spec:
       paths:
         - pathType: Prefix
           path: /
-
-
+          backend:
+            service:
+              name: dev-erpnext
+              port: 
+                number:80
 jobs:
   volumePermissions:
     enabled: false
