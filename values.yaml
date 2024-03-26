@@ -277,20 +277,21 @@ ingress:
     kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
     # cert-manager.io/cluster-issuer: letsencrypt-prod
-  tls:
-  - hosts:
-  - k8-atd.mmis.space
-  secretName: ingress-cert
-  rules:
-  - host: "k8-atd.mmis.space"
-    http:
-      paths:
-        - pathType: Prefix
-          path: "/"
-          backend:
-            service:
-              name: dev-erpnext
-              port:
+  spec:
+    tls:
+    - hosts:
+      - k8-atd.mmis.space
+      secretName: ingress-cert
+    rules:
+    - host: "k8-atd.mmis.space"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: dev-erpnext
+                port:
                 number: 8080
   # hosts:
   # - host: k8-atd.mmis.space
