@@ -282,7 +282,10 @@ ingress:
     paths:
     - path: /
       pathType: Prefix
-    tls: []
+    tls:
+    - hosts:
+      - k8-atd.mmis.space
+      secretName: ingress-cert
     # backend:
     #   service:
     #       name: dev-erpnext
