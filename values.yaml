@@ -289,9 +289,9 @@ ingress:
             path: "/"
             backend:
               service:
-                name: sample-app-service
+                name: dev-erpnext
                 port:
-                  number: 80
+                  number: 8080
   # hosts:
   # - host: k8-atd.mmis.space
   #   paths:
