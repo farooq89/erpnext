@@ -303,7 +303,7 @@ spec:
       http:
         paths:
           - pathType: Prefix
-            path: "/"
+            path: /
 
 
 jobs:
