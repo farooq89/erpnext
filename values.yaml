@@ -260,7 +260,7 @@ persistence:
     enabled: true
     # existingClaim: ""
     size: 20Gi
-    storageClass: "azurefile-csi"
+    storageClass: "managed-csi"
   logs:
     # Container based log search and analytics stack recommended
     enabled: false
@@ -338,7 +338,7 @@ jobs:
 
   createSite:
     enabled: true
-    forceCreate: true
+    forceCreate: false
     siteName: "k8-atd.mmis.space"
     adminPassword: "mm@123"
     installApps:
