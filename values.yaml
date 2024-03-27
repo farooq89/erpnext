@@ -338,7 +338,7 @@ jobs:
 
   createSite:
     enabled: true
-    forceCreate: true
+    forceCreate: false
     siteName: "k8-atd.mmis.space"
     adminPassword: "mm@123"
     installApps:
@@ -385,7 +385,7 @@ jobs:
     affinity: {}
 
   migrate:
-    enabled: false
+    enabled: true
     siteName: "k8-atd.mmis.space"
     skipFailing: false
     backoffLimit: 0
