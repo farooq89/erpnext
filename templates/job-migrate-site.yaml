@@ -34,8 +34,6 @@ spec:
             yarn build;
             cd ../..;
             sleep 90;
-            bench set-config cors_allow_origin "*";
-            bench set-config ignore_csrf 1;
             bench --site k8-atd.mmis.space migrate;
         env:
           - name: "SITE_NAME"
