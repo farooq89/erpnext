@@ -28,6 +28,7 @@ spec:
             git stash;
             git pull;
             yarn build;
+            ls;
             cd ../..;
             sleep 90;
             bench --site k8-atd.mmis.space migrate;

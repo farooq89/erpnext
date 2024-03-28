@@ -12,8 +12,6 @@ dbRootPassword: "postgres"
 image:
   repository: usman89/myrepo
   tag: frapee_atd_0.0.2
-  # repository: frappe/erpnextt
-  # tag: v15.14.3
   pullPolicy: Always
 
 nginx:
@@ -47,10 +45,10 @@ nginx:
   resources: {}
   nodeSelector: {}
   tolerations:
-    - key: "CriticalAddonsOnly"
-      operator: "Equal"
-      value: "true"
-      effect: "NoSchedule"
+  - key: "CriticalAddonsOnly"
+    operator: "Equal"
+    value: "true"
+    effect: "NoSchedule"
   affinity: {}
   envVars: []
   initContainers: []
@@ -81,10 +79,10 @@ worker:
     resources: {}
     nodeSelector: {}
     tolerations:
-      - key: "CriticalAddonsOnly"
-        operator: "Equal"
-        value: "true"
-        effect: "NoSchedule"
+    - key: "CriticalAddonsOnly"
+      operator: "Equal"
+      value: "true"
+      effect: "NoSchedule"
     affinity: {}
     args: []
     envVars: []
@@ -102,10 +100,10 @@ worker:
     resources: {}
     nodeSelector: {}
     tolerations:
-      - key: "CriticalAddonsOnly"
-        operator: "Equal"
-        value: "true"
-        effect: "NoSchedule"
+    - key: "CriticalAddonsOnly"
+      operator: "Equal"
+      value: "true"
+      effect: "NoSchedule"
     affinity: {}
     livenessProbe:
       override: false
@@ -128,10 +126,10 @@ worker:
     resources: {}
     nodeSelector: {}
     tolerations:
-      - key: "CriticalAddonsOnly"
-        operator: "Equal"
-        value: "true"
-        effect: "NoSchedule"
+    - key: "CriticalAddonsOnly"
+      operator: "Equal"
+      value: "true"
+      effect: "NoSchedule"
     affinity: {}
     livenessProbe:
       override: false
@@ -154,10 +152,10 @@ worker:
     resources: {}
     nodeSelector: {}
     tolerations:
-      - key: "CriticalAddonsOnly"
-        operator: "Equal"
-        value: "true"
-        effect: "NoSchedule"
+    - key: "CriticalAddonsOnly"
+      operator: "Equal"
+      value: "true"
+      effect: "NoSchedule"
     affinity: {}
     livenessProbe:
       override: false
@@ -174,10 +172,10 @@ worker:
     resources: {}
     nodeSelector: {}
     tolerations:
-      - key: "CriticalAddonsOnly"
-        operator: "Equal"
-        value: "true"
-        effect: "NoSchedule"
+    - key: "CriticalAddonsOnly"
+      operator: "Equal"
+      value: "true"
+      effect: "NoSchedule"
     affinity: {}
     livenessProbe:
       override: false
@@ -243,10 +241,10 @@ socketio:
   resources: {}
   nodeSelector: {}
   tolerations:
-    - key: "CriticalAddonsOnly"
-      operator: "Equal"
-      value: "true"
-      effect: "NoSchedule"
+  - key: "CriticalAddonsOnly"
+    operator: "Equal"
+    value: "true"
+    effect: "NoSchedule"
   affinity: {}
   service:
     type: ClusterIP
@@ -314,10 +312,10 @@ jobs:
     resources: {}
     nodeSelector: {}
     tolerations:
-      - key: "CriticalAddonsOnly"
-        operator: "Equal"
-        value: "true"
-        effect: "NoSchedule"
+    - key: "CriticalAddonsOnly"
+      operator: "Equal"
+      value: "true"
+      effect: "NoSchedule"
     affinity: {}
 
   configure:
@@ -327,10 +325,10 @@ jobs:
     resources: {}
     nodeSelector: {}
     tolerations:
-      - key: "CriticalAddonsOnly"
-        operator: "Equal"
-        value: "true"
-        effect: "NoSchedule"
+    - key: "CriticalAddonsOnly"
+      operator: "Equal"
+      value: "true"
+      effect: "NoSchedule"
     affinity: {}
     envVars: []
     command: []
@@ -348,10 +346,10 @@ jobs:
     resources: {}
     nodeSelector: {}
     tolerations:
-      - key: "CriticalAddonsOnly"
-        operator: "Equal"
-        value: "true"
-        effect: "NoSchedule"
+    - key: "CriticalAddonsOnly"
+      operator: "Equal"
+      value: "true"
+      effect: "NoSchedule"
     affinity: {}
     initialDelaySeconds: 60
     periodSeconds: 30
@@ -364,10 +362,10 @@ jobs:
     resources: {}
     nodeSelector: {}
     tolerations:
-      - key: "CriticalAddonsOnly"
-        operator: "Equal"
-        value: "true"
-        effect: "NoSchedule"
+    - key: "CriticalAddonsOnly"
+      operator: "Equal"
+      value: "true"
+      effect: "NoSchedule"
     affinity: {}
 
   backup:
@@ -378,10 +376,10 @@ jobs:
     resources: {}
     nodeSelector: {}
     tolerations:
-      - key: "CriticalAddonsOnly"
-        operator: "Equal"
-        value: "true"
-        effect: "NoSchedule"
+    - key: "CriticalAddonsOnly"
+      operator: "Equal"
+      value: "true"
+      effect: "NoSchedule"
     affinity: {}
 
   migrate:
@@ -392,10 +390,10 @@ jobs:
     resources: {}
     nodeSelector: {}
     tolerations:
-      - key: "CriticalAddonsOnly"
-        operator: "Equal"
-        value: "true"
-        effect: "NoSchedule"
+    - key: "CriticalAddonsOnly"
+      operator: "Equal"
+      value: "true"
+      effect: "NoSchedule"
     affinity: {}
     initialDelaySeconds: 40
     periodSeconds: 60
@@ -412,10 +410,10 @@ jobs:
     nodeSelector: {}
     affinity: {}
     tolerations:
-      - key: "CriticalAddonsOnly"
-        operator: "Equal"
-        value: "true"
-        effect: "NoSchedule"
+    - key: "CriticalAddonsOnly"
+      operator: "Equal"
+      value: "true"
+      effect: "NoSchedule"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -432,9 +430,9 @@ securityContext:
   capabilities:
     add:
     - CAP_CHOWN
-  # readOnlyRootFilesystem: true
-  # runAsNonRoot: true
-  # runAsUser: 1000
+    # readOnlyRootFilesystem: true
+    # runAsNonRoot: true
+    # runAsUser: 1000
 
 redis-cache:
   # https://github.com/bitnami/charts/tree/master/bitnami/redis
@@ -477,16 +475,13 @@ mariadb:
       ports:
         mysql: 3306
     extraFlags: >-
-      --skip-character-set-client-handshake
-      --skip-innodb-read-only-compressed
-      --character-set-server=utf8mb4
-      --collation-server=utf8mb4_unicode_ci
+      --skip-character-set-client-handshake --skip-innodb-read-only-compressed --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     tolerations:
-      - key: "CriticalAddonsOnly"
-        operator: "Equal"
-        value: "true"
-        effect: "NoSchedule"
-    
+    - key: "CriticalAddonsOnly"
+      operator: "Equal"
+      value: "true"
+      effect: "NoSchedule"
+
 
 postgresql:
   # https://github.com/bitnami/charts/tree/master/bitnami/postgresql
@@ -500,7 +495,7 @@ postgresql:
       ports:
         postgresql: 5432
   tolerations:
-    - key: "CriticalAddonsOnly"
-      operator: "Equal"
-      value: "true"
-      effect: "NoSchedule"
+  - key: "CriticalAddonsOnly"
+    operator: "Equal"
+    value: "true"
+    effect: "NoSchedule"
